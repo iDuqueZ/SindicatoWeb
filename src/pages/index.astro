@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import CalendarioEventos from '../components/CalendarioEventos.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -10,27 +12,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<h1>¡Bienvenidos a <stronger class="text-blue-900">SIMTRAEMPUVALLE</stronger> ✊!</h1>
 			<p>
-				Sindicato misto de trabajadores públicos de UNIVALLE 👷‍♂️📚 <br/>
+				Sindicato mixto de trabajadores públicos de UNIVALLE 👷‍♂️📚 <br/>
 				Base que propende por los derechos de sus afiliados 
 			</p>
 			<p>
 				En esta página encontrarás información sobre el sindicato, sus actividades y los beneficios que ofrece
 			</p>
-			<p>
-				Para afiliarte, por favor comunícate con nosotros a través de los medios de contacto que encontrarás en la sección de <a href="/contacto">contacto</a>
-			</p>
-			<ul>
-				<li><a href="/historia">Historia</a></li>
-				<li><a href="/actividades">Actividades</a></li>
-				<li><a href="/beneficios">Beneficios</a></li>
-				<li><a href="/contacto">Contacto</a></li>
-			</ul>
+			
+			<!-- Boton para afiliarte vía whatsapp -->
+			 <div class="flex flex-col justify-center border-l-2 border-blue-900">
+				<p class="text-center"><b class="font-semibold">¿Quieres afiliarte?</b> ¡Haz clic en el botón y te atenderemos vía whatsapp!</p>
+				<a href="https://wa.me/" target="_blank" class="m-auto tracking-wider text-white! bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+					Afiliarme🫰
+				</a>
+			 </div>
+
+			<PreguntasFrecuentes />
+
+			<CalendarioEventos />
+
 			<p>
 				¡Gracias por visitarnos!
 			</p>
@@ -55,6 +62,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				  });
 				}
 			  }));
+			}
+		  </script>
+
+		  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+		  <script is:inline>
+			if (typeof Storage !== 'undefined') {
+			  if (
+				localStorage.getItem('dark_mode') &&
+				localStorage.getItem('dark_mode') === 'false'
+			  ) {
+				document.documentElement.classList.remove('dark')
+			  }
 			}
 		  </script>
 	</body>
