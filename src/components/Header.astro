@@ -9,28 +9,25 @@ import { SITE_TITLE } from '../consts';
 			<img src="/Images/logo_se.webp" alt="Logo" width="50" height="50" />
 			<!-- <h2><a href="/">{SITE_TITLE}</a></h2> -->
 		</div>
-		<div class="internal-links">
+		<button class="hamburger" id="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<div class="internal-links" id="nav-menu">
 			<HeaderLink href="/">Inicio</HeaderLink>
 			<HeaderLink href="/blog">Publicaciones</HeaderLink>
 			<HeaderLink href="/about">Nosotros</HeaderLink>
 		</div>	
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
 		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 	}
 	nav {
 		display: flex;
@@ -39,30 +36,70 @@ import { SITE_TITLE } from '../consts';
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
+		color: black;
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
 	nav a.active {
-		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-
-	header img {
-		border-radius: 100%;
-	}
-
 	header .logo {
 		display: flex;
 		align-items: center;
 	}
+
+	.logo img{
+		border-radius: 100%;
+	}
+
+	/* Estilos del botón hamburguesa */
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		gap: 5px;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+	.hamburger span {
+		display: block;
+		width: 25px;
+		height: 3px;
+		background: black;
+		transition: 0.3s;
+	}
+	/* Estilos para móviles */
+	@media (max-width: 768px) {
+		.hamburger {
+			display: flex;
+		}
+		.internal-links {
+			display: none;
+			flex-direction: column;
+			position: absolute;
+			top: 60px;
+			right: 10px;
+			background: white;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+			border-radius: 5px;
+			padding: 10px;
+			width: 90%;
+		}
+		.internal-links.active {
+			display: flex;
+		}
+
+		.logo img {
+			width: 40px;
+			height: 40px;
+			margin: 5px;
+			border-radius: 100%;
+		}
+	}
 </style>
+
+<script is:inline>
+	document.getElementById('hamburger').addEventListener('click', () => {
+		document.getElementById('nav-menu').classList.toggle('active');
+	});
+</script>

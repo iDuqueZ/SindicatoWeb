@@ -63,7 +63,7 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 2.9em;
 }
 h2 {
 	font-size: 2.441em;
@@ -135,7 +135,23 @@ hr {
 		font-size: 18px;
 	}
 	main {
-		padding: 1em;
+		max-width: 100%;
+		padding: 1.5em;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.953em;
+	}
+	h3 {
+		font-size: 1.563em;
+	}
+	h4 {
+		font-size: 1.25em;
+	}
+	h5 {
+		font-size: 1em;
 	}
 }
 
@@ -155,4 +171,14 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+.prose ul{
+	list-style-type: disc;
+	padding-left: 1em;
+}
+
+.prose ol{
+	list-style-type: decimal;
+	padding-left: 1em;
 }
