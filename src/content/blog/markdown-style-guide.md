@@ -2,7 +2,7 @@
 title: El comienzo de algo nuevo
 pubDate: 2025-03-09T12:11:00.000Z
 description: Este es el primer blog creado desde el CMS que se instaló
-heroImage: /images/nuevo-sindicato.jpg
+heroImage: /public/Images/logo_se.webp
 ---
 **El día de hoy veremos como se crea un buen blog:**
 
