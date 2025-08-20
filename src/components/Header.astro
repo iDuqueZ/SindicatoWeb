@@ -4,7 +4,7 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav class="bg-white border-b border-gray-200 px-4 py-2">
+	<nav class="bg-white border-b border-gray-200 px-4 py-2 flex items-center justify-between">
 	  <ul class="flex gap-6 items-center">
 	    <li class="relative group">
 	      <a href="/" class="hover:underline">Inicio</a>
@@ -79,6 +79,21 @@ import { SITE_TITLE } from '../consts';
 	      </div>
 	    </li>
 	  </ul>
+	  <form action="/buscar" method="get" class="flex items-center gap-2">
+	    <input
+	      type="text"
+	      name="q"
+	      placeholder="Buscar..."
+	      class="border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+	      aria-label="Buscar"
+	    />
+	    <button
+	      type="submit"
+	      class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
+	    >
+	      Buscar
+	    </button>
+	  </form>
 	</nav>
 </header>
 
@@ -158,8 +173,10 @@ import { SITE_TITLE } from '../consts';
 	}
 </style>
 
+<!--
 <script is:inline>
 	document.getElementById('hamburger').addEventListener('click', () => {
 		document.getElementById('nav-menu').classList.toggle('active');
 	});
 </script>
+-->
