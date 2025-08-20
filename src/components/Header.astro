@@ -4,96 +4,24 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav class="bg-white border-b border-gray-200 px-4 py-2 flex items-center justify-between">
-	  <ul class="flex gap-6 items-center">
-	    <li class="relative group">
-	      <a href="/" class="hover:underline">Inicio</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de la página de inicio -->
-	          Bienvenido a la página principal del sindicato.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/publicaciones" class="hover:underline">Publicaciones</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de publicaciones -->
-	          Aquí encontrarás todas las publicaciones recientes del sindicato.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/nosotros" class="hover:underline">Nosotros</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de nosotros -->
-	          Información sobre la historia, misión y visión del sindicato.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/noticias" class="hover:underline">Noticias</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de noticias -->
-	          Últimas noticias y novedades del sindicato.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/acuerdos" class="hover:underline">Acuerdos</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de acuerdos -->
-	          Consulta los acuerdos y convenios vigentes.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/galeria" class="hover:underline">Galería</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de galería -->
-	          Explora las fotos y videos de nuestras actividades.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/actividades" class="hover:underline">Actividades</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de actividades -->
-	          Calendario y detalles de las próximas actividades.
-	        </div>
-	      </div>
-	    </li>
-	    <li class="relative group">
-	      <a href="/genero" class="hover:underline">Asuntos de Género</a>
-	      <div class="absolute left-0 mt-2 w-64 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto z-10">
-	        <div class="p-4">
-	          <!-- Contenido de asuntos de género -->
-	          Iniciativas y recursos sobre equidad de género.
-	        </div>
-	      </div>
-	    </li>
-	  </ul>
-	  <form action="/buscar" method="get" class="flex items-center gap-2">
-	    <input
-	      type="text"
-	      name="q"
-	      placeholder="Buscar..."
-	      class="border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
-	      aria-label="Buscar"
-	    />
-	    <button
-	      type="submit"
-	      class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
-	    >
-	      Buscar
-	    </button>
-	  </form>
+	<nav>
+		<div class="logo">
+			<img src="/Images/logo_se.webp" alt="Logo" width="50" height="50" />
+			<!-- <h2><a href="/">{SITE_TITLE}</a></h2> -->
+		</div>
+		<button class="hamburger" id="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<div class="internal-links" id="nav-menu">
+			<HeaderLink href="/">Inicio</HeaderLink>
+			<HeaderLink href="/blog">Noticias</HeaderLink>
+			<HeaderLink href="/about">Nosotros</HeaderLink>
+			<HeaderLink href="/acuerdos">Acuerdos</HeaderLink>
+			<HeaderLink href="/galeria">Galeria</HeaderLink>
+			<HeaderLink href="/asuntos-genero">Asuntos de Género</HeaderLink>
+		</div>	
 	</nav>
 </header>
 
@@ -173,10 +101,8 @@ import { SITE_TITLE } from '../consts';
 	}
 </style>
 
-<!--
 <script is:inline>
 	document.getElementById('hamburger').addEventListener('click', () => {
 		document.getElementById('nav-menu').classList.toggle('active');
 	});
 </script>
--->
