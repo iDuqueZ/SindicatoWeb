@@ -9,7 +9,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -27,13 +27,57 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				En esta página encontrarás información sobre el sindicato, sus actividades y los beneficios que ofrece
 			</p>
 			
-			<!-- Boton para afiliarte vía whatsapp -->
-			 <div class="flex flex-col justify-center border-l-2 border-blue-900">
-				<p class="text-center"><b class="font-semibold">¿Quieres afiliarte?</b> ¡Haz clic en el botón y te atenderemos vía whatsapp!</p>
-				<a href="https://wa.me/+573180056547" target="_blank" class="m-auto tracking-wider text-white! bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-					Afiliarme🫰
-				</a>
-			 </div>
+			<!-- Botón flotante de WhatsApp -->
+<style>
+  .boton-flotante-afiliarme {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 50;
+    animation: parpadeo 1s infinite alternate;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @keyframes parpadeo {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  .boton-flotante-afiliarme p {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    right: 0;
+    left: auto;
+    transform: translateY(0) translateX(0);
+    background: #fff;
+    color: #166534;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    font-weight: 600;
+    transition: opacity 0.2s;
+    width: max-content;
+    max-width: 250px;
+    text-align: center;
+    white-space: normal;
+  }
+  .boton-flotante-afiliarme:hover p,
+  .boton-flotante-afiliarme:focus-within p {
+    display: block;
+  }
+</style>
+
+<div class="boton-flotante-afiliarme">
+  <p>¿Quieres afiliarte? <span class="font-normal">Haz clic y te atenderemos vía WhatsApp</span></p>
+  <a href="https://wa.me/+573180056547" target="_blank"
+    class="tracking-wider text-white! bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 shadow-lg"
+    aria-label="Afiliarme por WhatsApp">
+    Afiliarme🫰
+  </a>
+</div>
 
 
 			<UltimasPublicaciones />
