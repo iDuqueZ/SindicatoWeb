@@ -15,8 +15,8 @@ export default function App() {
   return (
     <>
       <Swiper 
-        slidesPerView={3}
-          spaceBetween={30}
+        slidesPerView={1}
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
@@ -24,12 +24,26 @@ export default function App() {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
       navigation={true} 
       modules={[Navigation, Autoplay]} 
       className="mySwiper">
         <SwiperSlide>
           <a href="/boletines/documentos/bol1.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen1.jpg" alt="Imagen 1" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen1.jpg" alt="Imagen 1" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
@@ -39,37 +53,37 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol3.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen3.jpg" alt="Imagen 3" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen3.jpg" alt="Imagen 3" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol4.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen4.jpg" alt="Imagen 4" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen4.jpg" alt="Imagen 4" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol5.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen5.jpg" alt="Imagen 5" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen5.jpg" alt="Imagen 5" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol6.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen6.jpg" alt="Imagen 6" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen6.jpg" alt="Imagen 6" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol7.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen7.jpg" alt="Imagen 7" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen7.jpg" alt="Imagen 7" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol8.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen8.jpg" alt="Imagen 8" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen8.jpg" alt="Imagen 8" />
           </a>
         </SwiperSlide>
         <SwiperSlide>
           <a href="/boletines/documentos/bol9.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="boletines/imagenes/imagen9.jpg" alt="Imagen 9" />
+            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen9.jpg" alt="Imagen 9" />
           </a>
         </SwiperSlide>
       </Swiper>
