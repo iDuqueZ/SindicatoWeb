@@ -19,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 	    />
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={"Noticias"} description={SITE_DESCRIPTION} />
 		<style>
 			main {
 				width: 860px;
@@ -83,7 +83,6 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<h2>Boletines</h2>
 				<div class="my-4">
 					<CarruselBoletines client:only/>
 				</div>

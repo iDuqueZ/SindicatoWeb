@@ -3,11 +3,11 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
+<header class="header">
 	<nav>
 		<div class="logo">
-			<img src="/Images/logo_se.webp" alt="Logo" width="50" height="50" />
-			<!-- <h2><a href="/">{SITE_TITLE}</a></h2> -->
+			<img src="/Logo_Blanco.png" alt="Logo" width="50" height="50" />
+			<label style="margin-left: 10px; font-weight: bold; color: white;">SIMTRAEMPUVALLE</label>
 		</div>
 		<button class="hamburger" id="hamburger">
 			<span></span>
@@ -30,9 +30,15 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
+		background: transparent;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		z-index: 100;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
@@ -40,9 +46,12 @@ import { SITE_TITLE } from '../consts';
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: black;
+		color: white;
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		font-size: smaller;
+		font-weight: lighter;
+		letter-spacing: 1px;
 	}
 	nav a.active {
 		border-bottom-color: var(--accent);
@@ -54,6 +63,16 @@ import { SITE_TITLE } from '../consts';
 
 	.logo img{
 		border-radius: 100%;
+	}
+
+	.header.scrolled {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(20px);
+	}
+
+	.header.scrolled2 {
+		background: rgb(37, 37, 37, 0.6);
+		backdrop-filter: blur(20px);
 	}
 
 	/* Estilos del botón hamburguesa */
@@ -69,7 +88,7 @@ import { SITE_TITLE } from '../consts';
 		display: block;
 		width: 25px;
 		height: 3px;
-		background: black;
+		background: white;
 		transition: 0.3s;
 	}
 	/* Estilos para móviles */
@@ -89,6 +108,11 @@ import { SITE_TITLE } from '../consts';
 			padding: 10px;
 			width: 90%;
 		}
+
+		.internal-links a {
+			color: black !important;
+		}
+		
 		.internal-links.active {
 			display: flex;
 		}
@@ -105,5 +129,18 @@ import { SITE_TITLE } from '../consts';
 <script is:inline>
 	document.getElementById('hamburger').addEventListener('click', () => {
 		document.getElementById('nav-menu').classList.toggle('active');
+	});
+
+	const header = document.querySelector('.header');
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 200) {
+			header.classList.remove('scrolled');
+			header.classList.add('scrolled2');
+		} else if (window.scrollY > 50) {
+			header.classList.add('scrolled');
+			header.classList.remove('scrolled2');
+		} else {
+			header.classList.remove('scrolled', 'scrolled2');
+		}
 	});
 </script>
