@@ -41,7 +41,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 12px;
+				border-radius: 8px;
 			}
 			ul li a {
 				display: block;
@@ -50,10 +50,12 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 				color: rgb(var(--black));
 				line-height: 1;
+				font-size: 1.2rem !important;
 			}
 			.date {
 				margin: 0;
 				color: rgb(var(--gray));
+				font-size: 1rem !important;
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
@@ -73,9 +75,9 @@ const posts = (await getCollection('blog')).sort(
 				ul li:first-child {
 					margin-bottom: 0;
 				}
-				ul li:first-child .title {
+				/* ul li:first-child .title {
 					font-size: 1.563em;
-				}
+				} */
 			}
 		</style>
 	</head>
@@ -83,8 +85,13 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<div class="my-4">
+				<div class="mb-8">
 					<CarruselBoletines client:only/>
+					<p class="mt-4">Si desea ver todos los boletines, puede visitar la sección de <a href="/boletines">Boletines</a></p>
+				</div>
+
+				<div class="my-4 mt-8">
+					<h2 class="text-3xl! font-semibold text-gray-800!">Publicaciones Recientes</h2>
 				</div>
 
 				<ul>

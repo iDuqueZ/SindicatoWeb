@@ -14,6 +14,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 export default function App() {
   return (
     <>
+     <h2 className='text-3xl! font-semibold text-gray-800! mb-4!'>Ultimos Boletines</h2>
       <Swiper 
         slidesPerView={1}
           spaceBetween={20}
@@ -69,21 +70,6 @@ export default function App() {
         <SwiperSlide>
           <a href="/boletines/documentos/bol6.pdf" target="_blank" rel="noopener noreferrer">
             <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen6.jpg" alt="Imagen 6" />
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="/boletines/documentos/bol7.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen7.jpg" alt="Imagen 7" />
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="/boletines/documentos/bol8.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen8.jpg" alt="Imagen 8" />
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="/boletines/documentos/bol9.pdf" target="_blank" rel="noopener noreferrer">
-            <img className='object-cover w-full h-full' src="/boletines/imagenes/imagen9.jpg" alt="Imagen 9" />
           </a>
         </SwiperSlide>
       </Swiper>

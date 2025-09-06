@@ -2,14 +2,13 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
 
 // Obtener lista de PDFs de la carpeta public/documentos
 import fs from 'fs';
 import path from 'path';
 
 // Ajuste de la ruta para asegurar compatibilidad en build y dev
-const documentosDir = path.join(process.cwd(), 'public', 'documentos');
+const documentosDir = path.join(process.cwd(), 'public', 'boletines', 'documentos');
 let pdfs: string[] = [];
 try {
   pdfs = fs.readdirSync(documentosDir)
@@ -22,17 +21,17 @@ try {
 <!doctype html>
 <html lang="es">
   <head>
-    <BaseHead title={'Acuerdos'} description="Acuerdos firmados por el sindicato" />
+    <BaseHead title={'Boletines'} description="Todos los boletines" />
   </head>
   <body>
     <Header />
     <main class="max-w-3xl mx-auto py-8 px-4">
-      <p class="mb-8">Tu sindicato hermoso ha firmado estas cosas para ti.</p>
+      <p class="mb-8">En esta sección encontrarás todos los boletines del sindicato.</p>
       <ul>
-        {pdfs.length === 0 && <li>No hay acuerdos disponibles.</li>}
+        {pdfs.length === 0 && <li>No hay boletines disponibles.</li>}
         {pdfs.map((pdf) => (
           <li class="mb-2">
-            <a href={`/documentos/${encodeURIComponent(pdf)}`} target="_blank" rel="noopener" class="text-blue-700 underline flex items-center gap-2">
+            <a href={`/boletines/documentos/${encodeURIComponent(pdf)}`} target="_blank" rel="noopener" class="text-blue-700 underline flex items-center gap-2">
               📄 {pdf}
             </a>
           </li>
