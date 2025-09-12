@@ -7,13 +7,13 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<div class="mt-12 mb-8">
-    <h2 class="text-3xl! font-semibold text-gray-800!">Ultimas Publicaciones</h2>
-    <section>
+<div class="mb-8 md:h-[800px]">
+    <h2 class="text-3xl! font-semibold text-gray-800! mb-4!">Ultimas Publicaciones</h2>
+    <section class="md:overflow-y-auto md:overflow-x-hidden md:scrollbar-thin md:scrollbar-track-transparent md:scrollbar-thumb-transparent">
         <ul class="flex flex-col gap-2">
             <!-- Obtener los ultimos 3 posts -->
             {
-                posts.slice(0, 3).map((post) => (
+                posts.slice(0, 6).map((post) => (
                     <li class="group">
                         <a href={`/blog/${post.id}`} class="flex flex-row gap-2 items-center border-1 border-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200!">
                             <div class="w-[40%]">
