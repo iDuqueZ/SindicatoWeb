@@ -1,0 +1,117 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+<head>
+  <BaseHead title={"Todas las Publicaciones"} description={SITE_DESCRIPTION} />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+  <Header />
+  <main class="max-w-4xl mx-auto">
+    <section>
+      <div>
+        <p class="text-xl text-gray-800">
+          Aquí encontrarás todas las publicaciones por orden de fecha, también puedes buscar por su título.
+        </p>
+      </div>
+
+      <!-- Buscador -->
+      <div class="my-4">
+        <input 
+          id="searchInput"
+          type="text" 
+          placeholder="Buscar por título" 
+          class="w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Lista de posts -->
+      <ul id="postsList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+          posts.map((post) => (
+            <li data-title={post.data.title.toLowerCase()}>
+              <a href={`/blog/${post.id}/`}>
+                <img width={720} height={360} src={post.data.heroImage} alt="" class="rounded-lg mb-2" />
+                <h4 class="title line-clamp-2">{post.data.title}</h4>
+                <p class="date text-gray-500">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+                <p class="text-sm text-gray-600 line-clamp-3">{post.data.description}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Paginación (Flowbite) -->
+      <nav class="flex items-center justify-center mt-6" aria-label="Page navigation">
+        <ul id="pagination" class="inline-flex -space-x-px"></ul>
+      </nav>
+    </section>
+  </main>
+  <Footer />
+
+  <!-- Script de búsqueda + paginación -->
+  <script is:inline>
+    const posts = [...document.querySelectorAll('#postsList li')];
+    const searchInput = document.getElementById('searchInput');
+    const pagination = document.getElementById('pagination');
+    const postsPerPage = 4;
+    let currentPage = 1;
+    let filteredPosts = posts;
+
+    function renderPosts() {
+      const start = (currentPage - 1) * postsPerPage;
+      const end = start + postsPerPage;
+
+      posts.forEach((post, idx) => {
+        if (filteredPosts.includes(post) && idx >= start && idx < end) {
+          post.style.display = "block";
+        } else {
+          post.style.display = "none";
+        }
+      });
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <a href="#" class="px-3 py-2 leading-tight border ${i === currentPage ? "bg-blue-500 text-white" : "bg-white text-gray-500"} border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+            ${i}
+          </a>
+        `;
+        li.addEventListener("click", (e) => {
+          e.preventDefault();
+          currentPage = i;
+          renderPosts();
+        });
+        pagination.appendChild(li);
+      }
+    }
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      filteredPosts = posts.filter(post => post.dataset.title.includes(query));
+      currentPage = 1;
+      renderPosts();
+    });
+
+    renderPosts();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>

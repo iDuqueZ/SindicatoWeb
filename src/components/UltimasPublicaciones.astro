@@ -14,14 +14,14 @@ const posts = (await getCollection('blog')).sort(
             <!-- Obtener los ultimos 3 posts -->
             {
                 posts.slice(0, 6).map((post) => (
-                    <li class="group">
-                        <a href={`/blog/${post.id}`} class="flex flex-row gap-2 items-center border-1 border-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200!">
-                            <div class="w-[40%]">
-                                <img src={post.data.heroImage} alt={post.data.title} class="rounded-l-lg! rounded-r-none! w-full object-cover"/>
+                    <li class="group h-[150px]">
+                        <a href={`/blog/${post.id}`} class="flex flex-row gap-2 items-center border-1 border-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200! h-full!">
+                            <div class="w-[40%] h-full! container-img">
+                                <img src={post.data.heroImage} alt={post.data.title} class="rounded-l-lg! rounded-r-none! object-cover h-full!"/>
                             </div>
                             <div class="w-[60%]">
-                                <h4 class="text-md text-gray-800 dark:group-hover:text-gray-200!">{post.data.title}</h4>
-                                <p class="text-sm text-gray-600 dark:group-hover:text-gray-200!">
+                                <h4 class="text-base! text-gray-800 dark:group-hover:text-gray-200! line-clamp-2 mb-1!">{post.data.title}</h4>
+                                <p class="text-sm text-gray-600 dark:group-hover:text-gray-200! line-clamp-2 mb-1!">
                                     {post.data.description}
                                 </p>
                                 <p class="text-sm text-gray-600 dark:group-hover:text-gray-200!">
