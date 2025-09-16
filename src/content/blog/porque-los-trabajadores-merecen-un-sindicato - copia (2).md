@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: Porque Los trabajadores merecen un sindicato
+title: Los sindicatos son para el trabajador
 pubDate: 2025-09-11T22:03:00.000-05:00
 author: Ivan D Duque ft Manuel Turizo
 description: " un sindicato es una herramienta de dignidad y justicia social:
