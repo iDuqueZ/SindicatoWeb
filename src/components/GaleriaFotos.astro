@@ -6,6 +6,7 @@ interface GalleryImage {
   src: string;
   alt: string;
   orientation: string;
+  description: string;
 }
 
 const dataPath = "./public/galeria/index.json";
@@ -13,23 +14,34 @@ const raw = fs.readFileSync(dataPath, "utf-8");
 const images: GalleryImage[] = JSON.parse(raw);
 ---
 
+<head>
+  <link rel="stylesheet" href="../../plugins/photoswipe-dynamic-caption-plugin.css">
+</head>
+
 <section class="w-full pb-8 galeria">
-  <div class="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-4 [column-fill:_balance]">
+  <div
+    class="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-4 [column-fill:_balance]"
+  >
     {
       images.map((img: GalleryImage) => (
         <div class="mb-4 break-inside-avoid">
-          <a href={img.src}
+          <a
+            href={img.src}
             data-pswp-src={img.src}
-            data-pswp-width={img.orientation === "vertical" ? 720 : 1280}
-            data-pswp-height={img.orientation === "vertical" ? 1280 : 720}
-            target="_blank" 
+            data-pswp-width={img.orientation === "vertical" ? 1080 : 1920}
+            data-pswp-height={img.orientation === "vertical" ? 1920 : 1080}
+            target="_blank"
           >
-            <img 
-              src={img.src} 
-              alt={img.alt} 
+            <img
+              src={img.src}
+              alt={img.alt}
               class="w-full h-auto rounded-lg shadow-md hover:opacity-90 transition outline-1 outline-gray-50 outline-offset-2 hover:outline-red-500 hover:outline-offset-4"
               loading="lazy"
             />
+            <span class="pswp-caption-content">
+              <p>{img.alt}</p>
+              <p>{img.description}</p>
+            </span>
           </a>
         </div>
       ))
@@ -40,11 +52,20 @@ const images: GalleryImage[] = JSON.parse(raw);
 <script>
   import PhotoSwipeLightbox from "photoswipe/lightbox";
   import "photoswipe/style.css";
+  import PhotoSwipeDynamicCaption from "../../plugins/photoswipe-dynamic-caption-plugin.esm.js";
+
   const lightbox = new PhotoSwipeLightbox({
     gallery: ".galeria",
     children: "a",
     pswpModule: () => import("photoswipe"),
-    padding: { top: 20, bottom: 40, left: 100, right: 100 }
+    padding: { top: 20, bottom: 40, left: 100, right: 100 },
   });
+
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+    mobileLayoutBreakpoint: 700,
+    type: "auto",
+    mobileCaptionOverlapRatio: 1,
+  });
+
   lightbox.init();
 </script>

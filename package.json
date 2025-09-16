@@ -19,6 +19,7 @@
     "astro": "^5.4.2",
     "flowbite": "^3.1.2",
     "photoswipe": "^5.4.4",
+    "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "swiper": "^11.2.10",

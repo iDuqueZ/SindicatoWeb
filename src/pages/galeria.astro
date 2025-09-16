@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import GaleriaFotos from '../components/GaleriaFotos.astro';
+import GaleriaFotos2 from '../components/GaleriaFotos2.tsx';
 ---
 
 
@@ -14,7 +14,7 @@ import GaleriaFotos from '../components/GaleriaFotos.astro';
   <body>
     <Header />
     <main class="max-w-6xl! w-full! mx-auto py-8 px-4">
-      <GaleriaFotos/>
+      <GaleriaFotos2 client:load/>
     </main>
     <Footer />
   </body>
