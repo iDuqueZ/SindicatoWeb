@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: Porque Los trabajadores merecen un sindicato
+title: Todos unidos
 pubDate: 2025-09-11T22:03:00.000-05:00
 author: Ivan D Duque ft Manuel Turizo
 description: " un sindicato es una herramienta de dignidad y justicia social:
   sin él, los trabajadores quedan expuestos a la vulnerabilidad individual; con
   él, se convierten en protagonistas de su propio destino."
-heroImage: https://tse1.mm.bing.net/th/id/OIP.CHZJwAnBbEyIJf3nxYZEZgHaE6?rs=1&pid=ImgDetMain&o=7&rm=3
+heroImage: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPhNfdASXZgRn0b8Y9zJyN-vrtalr9cthnqQ&s
 ---
 El sindicato no es un privilegio, es un derecho.  
 Los trabajadores merecen un sindicato porque:

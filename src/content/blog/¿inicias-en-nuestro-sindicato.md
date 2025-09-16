@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: ¿Inicias en nuestro sindicato?
+title: Así
 pubDate: 2025-09-11T22:50:00.000-05:00
 author: Mathías Demetri
 description: Aquí encontrarás detalles sobre lo que necesitas saber para
   aprovechar tu trayecto en nuestra sociedad.
-heroImage: https://www.industriall-union.org/sites/default/files/styles/article_top_image_w1440/public/uploads/images/Global-Worker/2016-2/rtx2tvfg.jpg?itok=tiy9wiPd
+heroImage: https://tse2.mm.bing.net/th/id/OIP.BfrIsjWfmuNrQ1IefCfC7wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3
 ---
 # ¿Inicias en nuestro sindicato?
 

@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: El deporte después de los cuarenta
+title: Deporte y Salud
 pubDate: 2025-09-11T22:45:00.000-05:00
 author: Aush
 description: Un cuerpo sano es la clave para tener buena salud, entérese de los
   beneficios que tiene el deporte para usted.
-heroImage: https://i.ytimg.com/vi/gy3L5sHT0r8/maxresdefault.jpg
+heroImage: https://itramed.com/wp-content/uploads/2016/04/mas-deporte-mas-salud.jpg
 ---
 Llegar a los cuarenta no significa detenerse, al contrario: es una edad en la que el deporte se vuelve aún más necesario para cuidar el cuerpo y la mente.  
 
