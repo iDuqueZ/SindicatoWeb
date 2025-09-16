@@ -1,37 +1,107 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_DESCRIPTION } from '../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
+
 <head>
   <BaseHead title={"Todas las Publicaciones"} description={SITE_DESCRIPTION} />
-  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+    rel="stylesheet"
+  />
 </head>
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    width: calc(50% - 1rem);
+  }
+  ul li * {
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  ul li img {
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+  ul li a {
+    display: block;
+  }
+  .title {
+    margin: 0;
+    color: rgb(var(--black));
+    line-height: 1;
+    font-size: 1.2rem !important;
+  }
+  .date {
+    margin: 0;
+    color: rgb(var(--gray));
+    font-size: 1rem !important;
+  }
+  ul li a:hover h4,
+  ul li a:hover .date {
+    color: rgb(var(--accent));
+  }
+  ul a:hover img {
+    box-shadow: var(--box-shadow);
+  }
+  @media (max-width: 720px) {
+    ul {
+      gap: 0.5em;
+    }
+    ul li {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
 <body>
   <Header />
-  <main class="max-w-4xl mx-auto">
+  <main class="max-w-4xl mx-auto -mt-4">
     <section>
-      <div>
+      <!-- <div>
         <p class="text-xl text-gray-800">
           Aquí encontrarás todas las publicaciones por orden de fecha, también puedes buscar por su título.
         </p>
-      </div>
+      </div> -->
 
       <!-- Buscador -->
-      <div class="my-4">
-        <input 
+      <div class="mb-6 relative">
+        <input
           id="searchInput"
-          type="text" 
-          placeholder="Buscar por título" 
-          class="w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500"
+          type="text"
+          placeholder="Buscar por título"
+          class="w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-red-500"
         />
+        <div class="absolute right-2 top-1/2 transform -translate-y-1/2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-gray-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
       </div>
 
       <!-- Lista de posts -->
@@ -40,12 +110,20 @@ const posts = (await getCollection('blog')).sort(
           posts.map((post) => (
             <li data-title={post.data.title.toLowerCase()}>
               <a href={`/blog/${post.id}/`}>
-                <img width={720} height={360} src={post.data.heroImage} alt="" class="rounded-lg mb-2" />
+                <img
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                  class="rounded-lg mb-2"
+                />
                 <h4 class="title line-clamp-2">{post.data.title}</h4>
                 <p class="date text-gray-500">
                   <FormattedDate date={post.data.pubDate} />
                 </p>
-                <p class="text-sm text-gray-600 line-clamp-3">{post.data.description}</p>
+                <p class="text-sm text-gray-600 line-clamp-3">
+                  {post.data.description}
+                </p>
               </a>
             </li>
           ))
@@ -53,8 +131,11 @@ const posts = (await getCollection('blog')).sort(
       </ul>
 
       <!-- Paginación (Flowbite) -->
-      <nav class="flex items-center justify-center mt-6" aria-label="Page navigation">
-        <ul id="pagination" class="inline-flex -space-x-px"></ul>
+      <nav
+        class="flex items-center justify-center mt-6"
+        aria-label="Page navigation"
+      >
+        <ul id="pagination" class="inline-flex -space-x-px gap-0!"></ul>
       </nav>
     </section>
   </main>
@@ -62,10 +143,10 @@ const posts = (await getCollection('blog')).sort(
 
   <!-- Script de búsqueda + paginación -->
   <script is:inline>
-    const posts = [...document.querySelectorAll('#postsList li')];
-    const searchInput = document.getElementById('searchInput');
-    const pagination = document.getElementById('pagination');
-    const postsPerPage = 4;
+    const posts = [...document.querySelectorAll("#postsList li")];
+    const searchInput = document.getElementById("searchInput");
+    const pagination = document.getElementById("pagination");
+    const postsPerPage = 6;
     let currentPage = 1;
     let filteredPosts = posts;
 
@@ -73,12 +154,12 @@ const posts = (await getCollection('blog')).sort(
       const start = (currentPage - 1) * postsPerPage;
       const end = start + postsPerPage;
 
-      posts.forEach((post, idx) => {
-        if (filteredPosts.includes(post) && idx >= start && idx < end) {
-          post.style.display = "block";
-        } else {
-          post.style.display = "none";
-        }
+      // Ocultar todo primero
+      posts.forEach((post) => (post.style.display = "none"));
+
+      // Mostrar solo los filtrados de la página actual
+      filteredPosts.slice(start, end).forEach((post) => {
+        post.style.display = "block";
       });
 
       renderPagination();
@@ -88,13 +169,42 @@ const posts = (await getCollection('blog')).sort(
       pagination.innerHTML = "";
       const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
+      // Botón "Prev"
+      const prevLi = document.createElement("li");
+      prevLi.innerHTML = `
+    <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight 
+      text-gray-500! bg-white! border border-e-0 border-gray-300! rounded-s-lg! 
+      hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 
+      dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="sr-only">Previous</span>
+      <svg class="w-2.5 h-2.5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+      </svg>
+    </a>
+  `;
+      prevLi.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          renderPosts();
+        }
+      });
+      pagination.appendChild(prevLi);
+
+      // Números de página
       for (let i = 1; i <= totalPages; i++) {
         const li = document.createElement("li");
         li.innerHTML = `
-          <a href="#" class="px-3 py-2 leading-tight border ${i === currentPage ? "bg-blue-500 text-white" : "bg-white text-gray-500"} border-gray-300 hover:bg-gray-100 hover:text-gray-700">
-            ${i}
-          </a>
-        `;
+      <a href="#" aria-current="${i === currentPage ? "page" : ""}"
+        class="flex items-center justify-center px-3 h-8 leading-tight 
+        ${
+          i === currentPage
+            ? "z-10 text-red-600! border border-red-300! bg-red-50! hover:bg-red-100! hover:text-red-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+            : "text-gray-500! bg-white! border border-gray-300! hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        }">
+        ${i}
+      </a>
+    `;
         li.addEventListener("click", (e) => {
           e.preventDefault();
           currentPage = i;
@@ -102,16 +212,48 @@ const posts = (await getCollection('blog')).sort(
         });
         pagination.appendChild(li);
       }
+
+      // Botón "Next"
+      const nextLi = document.createElement("li");
+      nextLi.innerHTML = `
+    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight 
+      text-gray-500! bg-white! border border-gray-300! rounded-e-lg! 
+      hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 
+      dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <span class="sr-only">Next</span>
+      <svg class="w-2.5 h-2.5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+      </svg>
+    </a>
+  `;
+      nextLi.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPosts();
+        }
+      });
+      pagination.appendChild(nextLi);
+    }
+
+    function normalizeText(str) {
+      return str
+        .normalize("NFD") // separa letras y tildes
+        .replace(/[\u0300-\u036f]/g, "") // elimina los diacríticos
+        .toLowerCase(); // opcional: pasar a minúsculas
     }
 
     searchInput.addEventListener("input", () => {
-      const query = searchInput.value.toLowerCase();
-      filteredPosts = posts.filter(post => post.dataset.title.includes(query));
+      const query = normalizeText(searchInput.value);
+      filteredPosts = posts.filter((post) =>
+        normalizeText(post.dataset.title).includes(query),
+      );
       currentPage = 1;
       renderPosts();
     });
 
     renderPosts();
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
+  ></script>
 </body>

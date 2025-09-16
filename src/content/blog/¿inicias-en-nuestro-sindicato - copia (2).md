@@ -1,0 +1,27 @@
+---
+layout: ../../layouts/BlogPost.astro
+title: ¿Inicias en nuestro sindicato?
+pubDate: 2025-09-11T22:50:00.000-05:00
+author: Mathías Demetri
+description: Aquí encontrarás detalles sobre lo que necesitas saber para
+  aprovechar tu trayecto en nuestra sociedad.
+heroImage: https://www.industriall-union.org/sites/default/files/styles/article_top_image_w1440/public/uploads/images/Global-Worker/2016-2/rtx2tvfg.jpg?itok=tiy9wiPd
+---
+# ¿Inicias en nuestro sindicato?
+
+Unirte a un sindicato no es solo firmar una afiliación: es dar un paso hacia la **dignidad, la solidaridad y la defensa colectiva**.  
+
+1. **No estás solo**  
+   Ingresar al sindicato significa que cuentas con el respaldo de compañeros y compañeras que luchan contigo por mejores condiciones laborales.  
+
+2. **Aprendes y participas**  
+   Aquí encontrarás espacios de formación, discusión y organización para conocer tus derechos y cómo defenderlos.  
+
+3. **Tu voz cuenta**  
+   Cada afiliado tiene derecho a opinar, votar y proponer. El sindicato no es una estructura lejana: eres parte activa de sus decisiones.  
+
+4. **Construimos futuro**  
+   La fuerza sindical no solo protege el presente, también abre camino para nuevas conquistas laborales y sociales.  
+
+Afiliarse es un acto de valentía y confianza.  
+**¿Inicias en nuestro sindicato?** Entonces comienzas también a escribir una historia colectiva de resistencia y esperanza.  
