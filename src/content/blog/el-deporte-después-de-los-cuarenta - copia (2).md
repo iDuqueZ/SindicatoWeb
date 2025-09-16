@@ -5,7 +5,7 @@ pubDate: 2025-09-11T22:45:00.000-05:00
 author: Aush
 description: Un cuerpo sano es la clave para tener buena salud, entérese de los
   beneficios que tiene el deporte para usted.
-heroImage: https://www.google.com/url?sa=i&url=https%3A%2F%2Fblogs.uninter.edu.mx%2Fdeportes%2Findex.php%2F2022%2F05%2F27%2Fel-deporte-es-salud%2F&psig=AOvVaw1r_umy2GasVxxVlLKBB48R&ust=1758128852843000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCICb2r_i3Y8DFQAAAAAdAAAAABAE
+heroImage: https://itramed.com/wp-content/uploads/2016/04/mas-deporte-mas-salud.jpg
 ---
 Llegar a los cuarenta no significa detenerse, al contrario: es una edad en la que el deporte se vuelve aún más necesario para cuidar el cuerpo y la mente.  
 
