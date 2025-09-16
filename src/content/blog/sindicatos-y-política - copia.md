@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: Sindicatos y Política
+title: La lucha histórica
 pubDate: 2025-09-11T22:15:00.000-05:00
 author: "Manuelin Pingüin "
 description: "La política y los sindicatos comparten lazos en la historia que
   responden a las luchas populares de Colombia. "
-heroImage: https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/BNRCBT2DSBCBFDWRFE3JMZLZ3Q.jpg
+heroImage: https://tse2.mm.bing.net/th/id/OIP.CCntyY6viLcmCCtI2H7FRQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3
 ---
 En Colombia, la política y el sindicalismo han estado históricamente entrelazados. Los sindicatos no solo defienden derechos laborales, también son actores políticos que inciden en las decisiones que afectan la vida de millones de trabajadores.
 
