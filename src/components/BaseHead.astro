@@ -1,7 +1,6 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import { ClientRouter } from "astro:transitions";
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
@@ -67,4 +66,3 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
     </div>
 </div>
 
-<ClientRouter />

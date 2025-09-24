@@ -4,147 +4,145 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="header">
-	<nav>
-		<div class="logo">
-			<img src="/Icono.svg" alt="Logo" width="50" height="50" />
-			<label style="margin-left: 10px; font-weight: bold; color: white;"
-				>SIMTRAEMPUVALLE</label
-			>
-		</div>
-		<button class="hamburger" id="hamburger">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<div class="internal-links" id="nav-menu">
-			<HeaderLink href="/">Inicio</HeaderLink>
-			<HeaderLink href="/blog">Noticias</HeaderLink>
-			<HeaderLink href="/about">Nosotros</HeaderLink>
-			<HeaderLink href="/acuerdos">Acuerdos</HeaderLink>
-			<HeaderLink href="/galeria">Galeria</HeaderLink>
-			<HeaderLink href="/asuntos-genero">Asuntos de Género</HeaderLink>
-			<HeaderLink href="/actividades">Actividades</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <div class="logo">
+      <img src="/Icono.svg" alt="Logo" width="50" height="50" />
+      <label style="margin-left: 10px; font-weight: bold; color: white;"
+        >SIMTRAEMPUVALLE</label
+      >
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="internal-links" id="nav-menu">
+      <HeaderLink href="/">Inicio</HeaderLink>
+      <HeaderLink href="/blog">Noticias</HeaderLink>
+      <HeaderLink href="/about">Nosotros</HeaderLink>
+      <HeaderLink href="/acuerdos">Acuerdos</HeaderLink>
+      <HeaderLink href="/galeria">Galeria</HeaderLink>
+      <HeaderLink href="/asuntos-genero">Asuntos de Género</HeaderLink>
+      <HeaderLink href="/actividades">Actividades</HeaderLink>
+    </div>
+  </nav>
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: transparent;
-		position: fixed;
-		width: 100%;
-		top: 0;
-		left: 0;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-		z-index: 100;
-	}
+  header {
+    margin: 0;
+    padding: 0 1em;
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
 
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: white;
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-		font-size: smaller;
-		font-weight: lighter;
-		letter-spacing: 1px;
-	}
-	nav a.active {
-		border-bottom-color: var(--accent);
-	}
-	header .logo {
-		display: flex;
-		align-items: center;
-	}
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    color: white;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: smaller;
+    font-weight: lighter;
+    letter-spacing: 1px;
+  }
+  nav a.active {
+    border-bottom-color: var(--accent);
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
 
-	.logo img {
-		border-radius: 100%;
-	}
+  .logo img {
+    border-radius: 100%;
+  }
 
-	.header.scrolled {
-		background: rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(20px);
-	}
+  .header.scrolled {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+  }
 
-	.header.scrolled2 {
-		background: rgb(37, 37, 37, 0.6);
-		backdrop-filter: blur(20px);
-	}
+  .header.scrolled2 {
+    background: rgb(37, 37, 37, 0.6);
+    backdrop-filter: blur(20px);
+  }
 
-	/* Estilos del botón hamburguesa */
-	.hamburger {
-		display: none;
-		flex-direction: column;
-		gap: 5px;
-		background: none;
-		border: none;
-		cursor: pointer;
-	}
-	.hamburger span {
-		display: block;
-		width: 25px;
-		height: 3px;
-		background: white;
-		transition: 0.3s;
-	}
-	/* Estilos para móviles */
-	@media (max-width: 768px) {
-		.hamburger {
-			display: flex;
-		}
-		.internal-links {
-			display: none;
-			flex-direction: column;
-			position: absolute;
-			top: 60px;
-			right: 10px;
-			background: white;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-			border-radius: 5px;
-			padding: 10px;
-			width: 90%;
-		}
+  /* Estilos del botón hamburguesa */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+  /* Estilos para móviles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    .internal-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      padding: 10px;
+      width: 90%;
+    }
 
-		.internal-links a {
-			color: black !important;
-		}
+    .internal-links a {
+      color: black !important;
+    }
 
-		.internal-links.active {
-			display: flex;
-		}
+    .internal-links.active {
+      display: flex;
+    }
 
-		.logo img {
-			width: 40px;
-			height: 40px;
-			margin: 10px;
-			border-radius: 100%;
-		}
-	}
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      border-radius: 100%;
+    }
+  }
 </style>
 
 <script is:inline>
-	document.addEventListener("astro:page-load", () => {
-		document.getElementById("hamburger").addEventListener("click", () => {
-			document.getElementById("nav-menu").classList.toggle("active");
-		});
+  document.getElementById("hamburger").addEventListener("click", () => {
+    document.getElementById("nav-menu").classList.toggle("active");
+  });
 
-		const header = document.querySelector(".header");
-		window.addEventListener("scroll", () => {
-			if (window.scrollY > 200) {
-				header.classList.remove("scrolled");
-				header.classList.add("scrolled2");
-			} else if (window.scrollY > 50) {
-				header.classList.add("scrolled");
-				header.classList.remove("scrolled2");
-			} else {
-				header.classList.remove("scrolled", "scrolled2");
-			}
-		});
-	});
+  const header = document.querySelector(".header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      header.classList.remove("scrolled");
+      header.classList.add("scrolled2");
+    } else if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+      header.classList.remove("scrolled2");
+    } else {
+      header.classList.remove("scrolled", "scrolled2");
+    }
+  });
 </script>

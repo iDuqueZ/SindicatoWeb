@@ -1,0 +1,115 @@
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+<div id="accordion-open" data-accordion="collapse">
+  <h3 id="accordion-open-heading-1">
+    <button
+      type="button"
+      class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+      data-accordion-target="#accordion-open-body-1"
+      aria-expanded="true"
+      aria-controls="accordion-open-body-1"
+    >
+      <span class="flex items-center"
+        >
+        ⭐ ¿Qué misión tenemos?
+      </span>
+      <svg
+        data-accordion-icon
+        class="w-3 h-3 rotate-180 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 10 6"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5 5 1 1 5"></path>
+      </svg>
+    </button>
+  </h3>
+  <div
+    id="accordion-open-body-1"
+    class="hidden"
+    aria-labelledby="accordion-open-heading-1"
+  >
+    <div class="p-5 border border-b-0 border-gray-200">
+      <p class="mb-2 text-gray-500">
+        Representar y defender los derechos e intereses laborales, salariales y
+        profesionales de los trabajadores y trabajadoras de la universidad
+        (docentes, administrativos, personal de servicios, etc.), promoviendo
+        condiciones dignas de empleo, equidad, justicia social y participación
+        democrática. Buscamos ser un espacio de construcción colectiva que
+        fortalezca el tejido social universitario y contribuya al desarrollo de
+        una educación pública de calidad, inclusiva y al servicio de la
+        sociedad.
+      </p>
+    </div>
+  </div>
+
+  <h3 id="accordion-open-heading-2">
+    <button
+      type="button"
+      class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+      data-accordion-target="#accordion-open-body-2"
+      aria-expanded="false"
+      aria-controls="accordion-open-body-2"
+    >
+      <span class="flex items-center"
+        >
+        📈 ¿Cuál es nuestra visión?
+      </span>
+      <svg
+        data-accordion-icon
+        class="w-3 h-3 rotate-180 shrink-0"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 10 6"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5 5 1 1 5"></path>
+      </svg>
+    </button>
+  </h3>
+  <div
+    id="accordion-open-body-2"
+    class="hidden"
+    aria-labelledby="accordion-open-heading-2"
+  >
+    <div class="p-5 border border-b-0 border-gray-200">
+      <p class="mb-2 text-gray-500">
+        Ser un sindicato referente en la defensa de los derechos laborales y la
+        promoción de un ambiente de trabajo justo y equitativo en la
+        universidad. Nos proyectamos como una organización sólida, democrática y
+        autónoma, capaz de incidir en las políticas universitarias para
+        garantizar el bienestar de sus trabajadores y trabajadoras, así como la
+        excelencia académica y el compromiso social de la institución. Aspiramos
+        a ser un actor clave en la construcción de una comunidad universitaria
+        unida, crítica y comprometida con los valores de la educación pública.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 720px) {
+    h3 {
+      font-size: 1rem;
+    }
+
+    /* svg {
+      display: none;
+    } */
+  }
+</style>

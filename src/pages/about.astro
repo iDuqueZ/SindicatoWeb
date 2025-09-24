@@ -1,15 +1,91 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from "../layouts/BlogPost.astro";
+import MisionVision from "../components/MisionVision.astro";
 ---
 
 <Layout
-	title="¿Quiénes somos?"
-	description="Conoce más sobre nosotros"
-	pubDate={new Date('Marzo 09 2025')}
-	heroImage="/blog-placeholder-about.jpg"
-	author="SIMTRAEMPUVALLE"
+  title="¿Quiénes somos?"
+  description="Conoce más sobre nosotros"
+  pubDate={new Date("Marzo 09 2025")}
+  author="SIMTRAEMPUVALLE"
 >
-	<p>
-		Somos un sindicato mixto de trabajadores públicos de la Universidad del Valle, que propende por los derechos de sus afiliados.
-	</p>
+  <p>
+    Somos un sindicato mixto de trabajadores públicos de la Universidad del
+    Valle, que propende por los derechos de sus afiliados.
+  </p>
+
+  <MisionVision />
+
+  <h2 class="mt-12!">Nuestra Junta Directiva</h2>
+  <ul class="my-8">
+    <div class="w-full flex justify-center mb-4">
+      <li class="flex flex-row items-center gap-4">
+        <img
+          src="/Images/Presidente.png"
+          alt="Presidente"
+          width="200"
+          height="200"
+          class="max-w-xs! bg-amber-600 rounded-[100%]! hover:scale-105 transition-transform duration-300 shadow-lg border-2 border-white"
+        />
+        <p class="mb-0!">
+          <strong class="text-red-500">Juan Pérez</strong>
+          <label class="text-sm block">Presidente</label>
+        </p>
+      </li>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+      <li class="flex flex-col items-center">
+        <img
+          src="/Images/Vicepresidente.png"
+          alt="Vicepresidente"
+          width="300"
+          height="300"
+          class="max-w-md bg-amber-600 rounded-[100%]! shadow-lg border-2 border-white hover:scale-105 transition-transform duration-300"
+        />
+        <p class="text-center">
+          <strong class="text-red-500">Ana Gómez</strong>
+          <label class="text-sm block">Vicepresidente</label>
+        </p>
+      </li>
+      <li class="flex flex-col items-center">
+        <img
+          src="/Images/Secretario General.png"
+          alt="Secretario General"
+          width="300"
+          height="300"
+          class="max-w-md bg-amber-600 rounded-[100%]! hover:scale-105 transition-transform duration-300"
+        />
+        <p class="text-center">
+          <strong class="text-red-500">Luis Rodríguez</strong>
+          <label class="text-sm block">Secretario General</label>
+        </p>
+      </li>
+      <li class="flex flex-col items-center">
+        <img
+          src="/Images/Tesorero.png"
+          alt="Tesorero"
+          width="300"
+          height="300"
+          class="max-w-md bg-amber-600 rounded-[100%]! hover:scale-105 transition-transform duration-300"
+        />
+        <p class="text-center">
+          <strong class="text-red-500">María López</strong>
+          <label class="text-sm block">Tesorero</label>
+        </p>
+      </li>
+      <li class="flex flex-col items-center">
+        <img
+          src="/Images/Fiscal.png"
+          alt="Fiscal"
+          width="300"
+          height="300"
+          class="max-w-md bg-amber-600 rounded-[100%]! hover:scale-105 transition-transform duration-300"
+        />
+        <p class="text-center">
+          <strong class="text-red-500">Carlos Martínez</strong>
+          <label class="text-sm block">Fiscal</label>
+        </p>
+      </li>
+    </div>
+  </ul>
 </Layout>
