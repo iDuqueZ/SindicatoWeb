@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://simtraempuvalle.org/sitemap-index.xml
