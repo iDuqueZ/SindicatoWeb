@@ -5,7 +5,7 @@ title: "Participación en el Foro Paz con Verdad y Justicia con memoria para la
 pubDate: 2025-09-18T15:25:00.000-05:00
 author: Richard Olave
 description: Las garantías que tenemos para amortiguar las violencias basadas en género
-heroImage: /public/Images/whatsapp-image-2025-09-25-at-2.26.31-pm.jpeg
+heroImage: /Images/foro.jpeg
 ---
 La Secretaría de Derechos Humanos y Género participó en el Foro de Paz con Verdad y Justicia en conmemoración a las victimas del exterminio y genocidio del movimiento político de la UP perpetrado por el estado. A través de la Sentencia del 30 de enero del 2023 la CIDH responsabilizó al estado colombiano por violaciones a los derechos humanos, específicamente en el contexto de la libertad de expresión y otros derechos fundamentales.
 La sentencia incluye órdenes específicas para que el Estado adopte medidas de reparación para las víctimas y establezca mecanismos para garantizar que tales violaciones no se repitan. Además, se destaca la importancia de la verdad y la justicia en el contexto de la memoria histórica del país.
