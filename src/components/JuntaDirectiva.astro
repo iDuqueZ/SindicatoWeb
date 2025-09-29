@@ -1,0 +1,70 @@
+---
+// Junta data
+type JuntaRole =
+  | "Presidente"
+  | "Vicepresidente"
+  | "Secretario General"
+  | "Tesorero"
+  | "Fiscal";
+
+const Junta: { name: string; role: JuntaRole; img: string }[] = [
+  { name: "Javier Camargo", role: "Presidente", img: "/Images/Presidente.png" },
+  {
+    name: "Fabián Avadía",
+    role: "Vicepresidente",
+    img: "/Images/Vicepresidente.png",
+  },
+  {
+    name: "Román Herrera",
+    role: "Secretario General",
+    img: "/Images/Secretario General.png",
+  },
+  { name: "Vladimir Ceballos", role: "Tesorero", img: "/Images/Tesorero.png" },
+  { name: "Nidia Solano", role: "Fiscal", img: "/Images/Fiscal.png" },
+];
+
+// Clases de posición en la grid (responsive: aplican en md+)
+const gridClasses: Record<JuntaRole, string> = {
+  Presidente: "md:col-span-2 md:row-span-2 md:col-start-1 md:row-start-1",
+  Vicepresidente: "md:col-start-3 md:row-span-2 md:row-start-1",
+  "Secretario General": "md:col-start-1 md:row-start-3 md:row-span-2",
+  Tesorero: "md:col-start-2 md:row-start-3 md:row-span-2",
+  Fiscal: "md:col-start-3 md:row-start-3 md:row-span-2",
+};
+---
+
+<h2 class="mt-12!">Nuestra Junta Directiva</h2>
+
+<p>
+  La Junta Directiva de SIMTRAEMPUVALLE está compuesta por un grupo de
+  profesionales dedicados y comprometidos con la defensa de los derechos de
+  nuestros afiliados. Cada miembro aporta su experiencia y conocimientos para
+  garantizar una gestión efectiva y transparente.
+</p>
+
+<!-- Grid container: en móvil es 1 columna; en md+ usa 3 columnas y 4 filas -->
+<ul class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-4 gap-4 my-8 pl-0!">
+  {
+    Junta.map((member) => (
+      <li
+        class={`flex flex-col items-stretch bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105
+                ${gridClasses[member.role] ?? ""}`}
+      >
+        <div class="w-full h-56! md:h-full">
+          <img
+            src={member.img}
+            alt={member.role}
+            width="600"
+            height="600"
+            class="w-full h-full! object-cover! object-top rounded-t-lg rounded-b-none!"
+          />
+        </div>
+
+        <div class="p-4 text-center bg-white pb-4">
+          <strong class="text-lg block text-zinc-800">{member.name}</strong>
+          <span class="text-sm block text-red-500 mt-1">◉ {member.role}</span>
+        </div>
+      </li>
+    ))
+  }
+</ul>

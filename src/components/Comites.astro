@@ -1,0 +1,73 @@
+---
+const comites = [
+  {
+    name: "📚 Comité de Educación",
+    role: "Líder: Ana Gómez",
+    image: "/Images/Comité de Educación.png",
+    descripcion: "El Comité de Educación se encarga de promover la formación y el desarrollo profesional de los afiliados.",
+  },
+  {
+    name: "📢 Comité de Comunicaciones",
+    role: "Líder: Juan Pérez",
+    image: "/Images/Comité de Comunicaciones.png",
+    descripcion: "El Comité de Comunicaciones se encarga de gestionar la información y la comunicación interna del sindicato.",
+  },
+  {
+    name: "📜 Comité de Derechos Humanos",
+    role: "Líder: María Rodríguez",
+    image: "/Images/Comité de derechos humanos.png",
+    descripcion: "El Comité de Derechos Humanos se encarga de velar por la protección y promoción de los derechos fundamentales de los trabajadores.",
+  },
+  {
+    name: "⛑️ Comité de Solidaridad",
+    role: "Líder: Carlos Martínez",
+    image: "/Images/Comité de Solidaridad.png",
+    descripcion: "El Comité de Solidaridad se encarga de brindar apoyo y asistencia a los afiliados en situaciones de vulnerabilidad.",
+  },
+  {
+    name: "🏃‍➡️ Comité de Recreación, Cultura y Deporte",
+    role: "Líder: Carlos Martínez",
+    image: "/Images/Comité recreación Cultura y deporte.png",
+    descripcion: "El Comité de Recreación, Cultura y Deporte se encarga de promover actividades recreativas y culturales para los afiliados.",
+  },
+  {
+    name: "⚖️ Comité Jurídico",
+    role: "Líder: Luisa Fernández",
+    image: "/Images/Comité Jurídico.png",
+    descripcion: "El Comité Jurídico se encarga de asesorar y defender los derechos legales de los afiliados.",
+  },
+];
+---
+
+<h2 class="mt-12!">Nuestros Comités</h2>
+
+<p>
+  Los comités del sindicato son espacios de participación y organización donde
+  nuestros afiliados pueden involucrarse activamente en la defensa de sus
+  derechos e intereses. Cada comité se enfoca en áreas específicas y trabaja en
+  conjunto para lograr nuestros objetivos comunes.
+</p>
+
+<p>A continuación, te presentamos los comités que conforman y sus líderes:</p>
+
+<div class="grid grid-cols-1 gap-2">
+  {
+    comites.map((comite) => (
+      <div class="flex flex-row bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 p-4">
+        <div class="w-fit h-32! md:h-32! ">
+          <img
+            src={comite.image}
+            alt={comite.name}
+            width="100"
+            height="100"
+          />
+        </div>
+        <div class="pl-4 bg-white w-full">
+          <strong class="text-lg block text-zinc-800">{comite.name}</strong>
+          <span class="text-sm block text-red-500 mt-1">◉ {comite.role}</span>
+          <p class="mt-2 text-gray-700 text-sm">{comite.descripcion}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

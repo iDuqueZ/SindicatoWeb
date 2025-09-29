@@ -1,20 +1,81 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/BlogPost.astro";
 ---
 
-
-<!doctype html>
-<html lang="es">
-  <head>
-    <BaseHead title={'Asuntos de genero'} description="En esta sección encontrarás todos los asuntos de genero del sindicato." />
-  </head>
-  <body>
-    <Header />
-    <main class="max-w-3xl mx-auto py-8 px-4">
-      <p class="mb-8">En esta sección encontrarás todos los asuntos de genero del sindicato.</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Layout
+  title="Asuntos de Género"
+  description="Información y recursos sobre asuntos de género"
+  pubDate={new Date("Marzo 09 2025")}
+  author="SIMTRAEMPUVALLE"
+>
+  <p class="mb-8">
+    Los asuntos de género son temas importantes que afectan a nuestros afiliados
+    y afiliadas. En esta sección, abordaremos diversas problemáticas y
+    propuestas relacionadas con la igualdad de género y la defensa de los
+    derechos de las mujeres o de cualquier persona en situación de
+    vulnerabilidad en el ámbito laboral.
+  </p>
+  <h2 class="mt-12!">Política de Igualdad de Género</h2>
+  <p class="mb-8">
+    En SIMTRAEMPUVALLE, estamos comprometidos con la promoción de la igualdad de
+    género en todos los aspectos de nuestra organización. Nuestra política de
+    igualdad de género se basa en los siguientes principios:
+  </p>
+  <ul class="list-disc list-inside mb-8">
+    <li>Promover la igualdad de oportunidades entre hombres y mujeres.</li>
+    <li>
+      Fomentar un ambiente de trabajo libre de discriminación y acoso sexual.
+    </li>
+    <li>
+      Implementar medidas para prevenir y abordar la violencia de género en el
+      lugar de trabajo.
+    </li>
+    <li>
+      Promover la participación activa de las mujeres en la toma de decisiones
+      dentro del sindicato.
+    </li>
+  </ul>
+  <h2 class="mt-12!">¿Qué hacer en caso de violencia de género?</h2>
+  <p class="mb-8">
+    Si eres víctima de violencia de género en el ámbito laboral, te recomendamos
+    seguir los siguientes pasos:
+  </p>
+  <ul class="list-disc list-inside mb-8">
+    <li>
+      Busca apoyo en personas de confianza, como amigos, familiares o compañeros
+      de trabajo.
+    </li>
+    <li>
+      Documenta cualquier incidente de violencia de género, incluyendo fechas,
+      horas, lugares y testigos.
+    </li>
+    <li>
+      Reporta el incidente a las autoridades competentes, como la policía o el
+      Ministerio de Trabajo.
+    </li>
+    <li>
+      Contacta al sindicato para recibir asesoría y apoyo en la defensa de tus
+      derechos.
+    </li>
+  </ul>
+  <h2 class="mt-12!">Recursos y Apoyo</h2>
+  <p class="mb-8">
+    En SIMTRAEMPUVALLE, ofrecemos diversos recursos y apoyo para nuestros
+    afiliados y afiliadas en temas de género, incluyendo:
+  </p>
+  <ul class="list-disc list-inside mb-8">
+    <li>Asesoría legal en casos de violencia de género.</li>
+    <li>
+      Talleres y capacitaciones sobre igualdad de género y prevención de la
+      violencia.
+    </li>
+    <li>
+      Grupos de apoyo y espacios seguros para compartir experiencias y recibir
+      apoyo emocional.
+    </li>
+    <li>
+      Campañas de sensibilización y promoción de la igualdad de género en el
+      lugar de trabajo.
+    </li>
+  </ul>
+</Layout>
