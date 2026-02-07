@@ -7,20 +7,47 @@ type JuntaRole =
   | "Tesorero"
   | "Fiscal";
 
-const Junta: { name: string; role: JuntaRole; img: string }[] = [
-  { name: "Javier Camargo", role: "Presidente", img: "/Images/Presidente.png" },
+const Junta: {
+  name: string;
+  role: JuntaRole;
+  img: string;
+  description: string;
+}[] = [
+  {
+    name: "Javier Camargo",
+    role: "Presidente",
+    img: "/Images/Presidente.png",
+    description:
+      "Orienta política y administrativamente a la organización, la representa ante instancias internas y externas y coordina la junta directiva. Define estrategias de defensa laboral, unidad sindical y cumplimiento estatutario.",
+  },
   {
     name: "Fabián Avadía",
     role: "Vicepresidente",
     img: "/Images/Vicepresidente.png",
+    description:
+      "Apoya la conducción política y la definición estratégica del sindicato, fortaleciendo la articulación interna y la movilización consciente de las bases para dar continuidad a los procesos de lucha colectiva.",
   },
   {
     name: "Román Herrera",
     role: "Secretario General",
     img: "/Images/Secretario General.png",
+    description:
+      "Coordina la organización interna y la cohesión política, garantiza el cumplimiento de mandatos colectivos y articula la comunicación entre dirección, bases y escenarios de lucha.",
   },
-  { name: "Vladimir Ceballos", role: "Tesorero", img: "/Images/Tesorero.png" },
-  { name: "Nidia Solano", role: "Fiscal", img: "/Images/Fiscal.png" },
+  {
+    name: "Vladimir Ceballos",
+    role: "Tesorero",
+    img: "/Images/Tesorero.png",
+    description:
+      "Orienta políticamente el uso de los recursos sindicales, asegurando transparencia y autonomía financiera al servicio de las prioridades estratégicas y las luchas de la organización.",
+  },
+  {
+    name: "Nidia Solano",
+    role: "Fiscal",
+    img: "/Images/Fiscal.png",
+    description:
+      "Ejerce control político y ético, vela por el cumplimiento estatutario y la transparencia de la gestión, fortaleciendo la confianza y legitimidad del proyecto sindical.",
+  },
 ];
 
 // Clases de posición en la grid (responsive: aplican en md+)
@@ -47,24 +74,50 @@ const gridClasses: Record<JuntaRole, string> = {
   {
     Junta.map((member) => (
       <li
-        class={`flex flex-col items-stretch bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105
-                ${gridClasses[member.role] ?? ""}`}
-      >
-        <div class="w-full h-56! md:h-full">
+          class={`group relative bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden
+                  transform transition-transform duration-300 hover:scale-105
+                  ${gridClasses[member.role] ?? ""}`}
+        >
+          <!-- Imagen de fondo -->
           <img
             src={member.img}
             alt={member.role}
-            width="600"
-            height="600"
-            class="w-full h-full! object-cover! object-top rounded-t-lg rounded-b-none!"
+            class="w-full !h-72 object-cover object-top"
           />
-        </div>
 
-        <div class="p-4 text-center bg-white pb-4">
-          <strong class="text-lg block text-zinc-800">{member.name}</strong>
-          <span class="text-sm block text-red-500 mt-1">◉ {member.role}</span>
-        </div>
-      </li>
+          <!-- Overlay -->
+          <div
+            class="
+              absolute inset-x-0 bottom-0
+              bg-white/95 backdrop-blur
+              p-4 text-center
+              transition-all duration-300 ease-out
+              translate-y-0
+              group-hover:-translate-y-10 
+              grope-hover: scale-105
+            "
+          >
+            <strong class="text-lg block text-zinc-800">
+              {member.name}
+            </strong>
+
+            <span class="text-sm block text-red-500 mt-1">
+              ◉ {member.role}
+            </span>
+
+            <span
+              class="
+                text-xs text-zinc-600 block my-2  text-wrap
+                opacity-0 max-h-0
+                transition-all duration-300 ease-out
+                group-hover:opacity-100
+                group-hover:max-h-20
+              "
+            >
+              {member.description}
+            </span>
+          </div>
+        </li>
     ))
   }
 </ul>
