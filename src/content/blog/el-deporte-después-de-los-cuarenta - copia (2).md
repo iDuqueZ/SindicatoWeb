@@ -22,9 +22,3 @@ Además, el deporte se vuelve cada vez más necesario para cuidar el cuerpo y la
    Practicar deporte en grupo no solo motiva, también genera vínculos y entusiasmo para enfrentar los retos cotidianos.  
 
    El deporte no es un lujo, es una inversión en **longevidad y calidad de vida**. No importa la edad: lo esencial es moverse.
-
-
-
-
-
-\*\*Esta Noticia está hecha con la ayuda de inteligencias artificiales.
